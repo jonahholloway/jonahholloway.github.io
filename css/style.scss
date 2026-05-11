@@ -313,8 +313,15 @@ button.btn, input.btn {
 
 // vertically center content of post rows
 .post-row {
-    align-items: center;
-    display: flex;
+  align-items: center;
+  display: flex;
+  
+  img.img-responsive {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
 }
 
 /*--------------------------------------------------------------
