@@ -1,11 +1,9 @@
 ---
 layout: post
-title: "Odonata CFD Analysis"
+title: "Dragonfly CFD Analysis"
 date: 2025-04-04
-lead_text: "Design study for an aircraft combining air-breathing and rocket propulsion."
-description: "Aerodynamic analysis of dragonfly wings using computational fluid dynamics."
+lead_text: "Aerodynamic analysis of reconstructed Odonata wings using OpenFOAM software."
 image: img/posts/odonata.jpg
-category: aerospace
 button_text: "Read More"
 button_icon: "file-text-o"
 ---
