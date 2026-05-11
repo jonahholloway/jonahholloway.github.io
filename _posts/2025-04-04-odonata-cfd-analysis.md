@@ -3,7 +3,8 @@ layout: post
 title: "Dragonfly CFD Analysis"
 date: 2025-04-04
 lead_text: "Aerodynamic analysis of reconstructed Odonata wings using OpenFOAM software."
-image: img/posts/odonata.jpg
+image: /img/posts/odonata.jpg
+project_link: /2025/04/04/odonata-cfd-analysis.html
 button_text: "Read More"
 button_icon: "file-text-o"
 ---
