@@ -258,7 +258,6 @@ button.btn, input.btn {
   img.img-responsive {
 	  width: 90%;
 	  height: auto;
-	  aspect-ratio: 3 / 2;
 	  object-fit: cover;
     @include bp-xsmall {
       display: none;
