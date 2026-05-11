@@ -256,7 +256,7 @@ button.btn, input.btn {
     margin-bottom: 2em;
   }
   img.img-responsive {
-	width: 90%;
+	width: 100%;
     height: auto;
 	border-radius: 4px;
     @include bp-xsmall {
@@ -317,8 +317,13 @@ button.btn, input.btn {
 // vertically center content of post rows
 .post-row {
   align-items: center;
-  max-width: 90%;
   display: flex;
+  margin-left: 4em;
+  margin-right: 4em;
+  @include bp-xsmall {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
 }
 
 /*--------------------------------------------------------------
