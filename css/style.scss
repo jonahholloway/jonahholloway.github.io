@@ -316,12 +316,12 @@ button.btn, input.btn {
   align-items: center;
   display: flex;
   
-  img.img-responsive {
-    width: 100%;
-    height: 425px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
+	img.img-responsive {
+	  width: 100%;
+	  height: auto;
+	  aspect-ratio: 3 / 2;
+	  object-fit: cover;
+	}
 }
 
 /*--------------------------------------------------------------
