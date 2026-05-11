@@ -258,7 +258,7 @@ button.btn, input.btn {
   img.img-responsive {
 	width: 100%;
     height: auto;
-	border-radius: 4px;
+	border-radius: 2px;
     @include bp-xsmall {
       display: none;
     }
@@ -267,7 +267,7 @@ button.btn, input.btn {
     }
   }
   .content {
-    margin-top: 5em;
+    margin-top: 3em;
     margin-left: 5em;
     @include bp-xsmall {
       margin-left: 0;
@@ -318,8 +318,8 @@ button.btn, input.btn {
 .post-row {
   align-items: center;
   display: flex;
-  margin-left: 4em;
-  margin-right: 4em;
+  margin-left: 2em;
+  margin-right: 2em;
   @include bp-xsmall {
     margin-left: 1em;
     margin-right: 1em;
