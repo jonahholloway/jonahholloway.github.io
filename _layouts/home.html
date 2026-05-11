@@ -15,15 +15,13 @@
             {% endif %}
 
             <div class="break"></div>
-	    {% for post in paginator.posts %}
+	    {% for post in site.posts %}
               <div class="wow fadeIn">
-              {% if post.position == "left" %}
-                {% include content-left.html %}
-              {% endif %}
-
-              {% if post.position == "right" %}
-                {% include content-right.html %}
-              {% endif %}
+		{% if post.position == "right" %}
+		  {% include content-right.html %}
+		{% else %}
+		  {% include content-left.html %}
+		{% endif %}
               </div>
             {% endfor %}
 
