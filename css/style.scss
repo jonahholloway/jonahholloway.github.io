@@ -256,6 +256,10 @@ button.btn, input.btn {
     margin-bottom: 2em;
   }
   img.img-responsive {
+	  width: 50%;
+	  height: auto;
+	  aspect-ratio: 3 / 2;
+	  object-fit: cover;
     @include bp-xsmall {
       display: none;
     }
@@ -315,13 +319,6 @@ button.btn, input.btn {
 .post-row {
   align-items: center;
   display: flex;
-  
-	img.img-responsive {
-	  width: 50%;
-	  height: auto;
-	  aspect-ratio: 3 / 2;
-	  object-fit: cover;
-	}
 }
 
 /*--------------------------------------------------------------
