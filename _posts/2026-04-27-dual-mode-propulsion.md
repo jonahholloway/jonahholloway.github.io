@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: inner
 title: "Dual-Mode Propulsion Aircraft Design"
 date: 2026-04-27
 lead_text: "Design study for an aircraft combining air-breathing and rocket propulsion."
