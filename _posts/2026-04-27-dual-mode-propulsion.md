@@ -3,11 +3,10 @@ layout: post
 title: "Dual-Mode Propulsion Aircraft Design"
 date: 2026-04-27
 lead_text: "Design study for an aircraft combining air-breathing and rocket propulsion."
-featured_image: /img/pic02.jpg
+featured_image: /img/dual-mode-prop.jpg
 project_link: /2026/04/27/dual-mode-propulsion.html
 button_text: "Read More"
 button_icon: "file-text-o"
-tags: [aerospace, propulsion]
 position: right
 ---
 
