@@ -256,8 +256,10 @@ button.btn, input.btn {
     margin-bottom: 2em;
   }
   img.img-responsive {
-	  width: 75%;
+	width: 90%;
     height: auto;
+	position: center;
+	border-radius: 2px;
     @include bp-xsmall {
       display: none;
     }
