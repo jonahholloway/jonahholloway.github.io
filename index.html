@@ -1,7 +1,6 @@
 ---
 layout: home
-pagination: 
-  enabled: true
 ---
-
-<!-- BLANK -->
+{% for post in site.posts %}
+  {% include post-content.html %}
+{% endfor %}
