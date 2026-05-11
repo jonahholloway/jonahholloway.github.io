@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: "Hi. My name is Jonah."
-description: "I'm an undergraduate Aerospace Engineering major at the Georgia Institute of Technology."
+description: "I am a student pursuing a B.S. in Aerospace Engineering at the Georgia Institute of Technology."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jonahholloway.github.io" # the base hostname & protocol for your site, e.g. https://example.com
 linkedin_username: 'jonahholloway'
