@@ -1,1 +1,141 @@
-<h1>My Projects</h1><ul><li><a href="Odonata-Aerodynamic-Analysis/">Odonata Aerodynamic Analysis</a></li><li><a href="Dual-Mode-Propulsion-Design/">Dual-Mode Propulsion Aircraft Design</a></li></ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Projects</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fafafa;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2c5f8d 100%);
+      color: white;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+    header svg {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    section { margin-bottom: 3rem; }
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #1e3a5f;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.5rem;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    .project-card svg {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 1rem;
+    }
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #1e3a5f;
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2">
+      <circle cx="50" cy="50" r="40"/>
+      <path d="M10 50 Q 50 20, 90 50 T 10 50" stroke-width="1.5"/>
+      <path d="M50 10 L 50 90 M 20 30 L 80 70 M 80 30 L 20 70" stroke-width="1"/>
+    </svg>
+    <h1>Projects</h1>
+    <p>A collection of engineering and research projects exploring aerodynamics, propulsion, and design.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About</h2>
+      <p>This page hosts technical write-ups and analyses from ongoing projects. Click any project below to view the full document.</p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <a href="Odonata-Aerodynamic-Analysis/" class="project-card">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2c5f8d" stroke-width="2">
+            <ellipse cx="50" cy="50" rx="5" ry="25"/>
+            <ellipse cx="25" cy="40" rx="20" ry="6" transform="rotate(-20 25 40)"/>
+            <ellipse cx="75" cy="40" rx="20" ry="6" transform="rotate(20 75 40)"/>
+            <ellipse cx="25" cy="60" rx="18" ry="5" transform="rotate(20 25 60)"/>
+            <ellipse cx="75" cy="60" rx="18" ry="5" transform="rotate(-20 75 60)"/>
+          </svg>
+          <h3>Odonata CFD Analysis</h3>
+          <p>Aerodynamic analysis of dragonfly wings using computational fluid dynamics.</p>
+        </a>
+
+        <a href="Dual-Mode-Propulsion-Design/" class="project-card">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2c5f8d" stroke-width="2">
+            <path d="M20 50 L 70 50 L 80 45 L 80 55 Z"/>
+            <path d="M40 50 L 35 35 L 55 35 L 50 50"/>
+            <path d="M40 50 L 35 65 L 55 65 L 50 50"/>
+            <circle cx="75" cy="50" r="3"/>
+            <path d="M15 50 L 5 45 M 15 50 L 5 55"/>
+          </svg>
+          <h3>Dual-Mode Propulsion Aircraft</h3>
+          <p>Design study for an aircraft combining two distinct propulsion systems.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with GitHub Pages</p>
+  </footer>
+</body>
+</html>
