@@ -1,5 +1,6 @@
 ---
 layout: post
+position: right
 title: "Dual-Mode Propulsion Aircraft Design"
 date: 2026-04-27
 description: "Design study for an aircraft combining air-breathing and rocket propulsion."
