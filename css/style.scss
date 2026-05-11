@@ -256,9 +256,6 @@ button.btn, input.btn {
     margin-bottom: 2em;
   }
   img.img-responsive {
-	  width: 90%;
-	  height: auto;
-	  object-fit: cover;
     @include bp-xsmall {
       display: none;
     }
