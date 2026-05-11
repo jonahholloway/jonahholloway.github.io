@@ -259,7 +259,9 @@ button.btn, input.btn {
 	width: 90%;
     height: auto;
 	position: center;
-	border-radius: 2px;
+	margin-left: 5em;
+	margin-right: 5em;
+	border-radius: 4px;
     @include bp-xsmall {
       display: none;
     }
