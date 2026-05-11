@@ -17,7 +17,7 @@ title: "Hi. My name is Jonah."
 description: "I'm an undergraduate Aerospace Engineering major at the Georgia Institute of Technology."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jonahholloway.github.io" # the base hostname & protocol for your site, e.g. https://example.com
-linkedin_username: 'http://linkedin.com/in/jonahholloway'
+linkedin_username: 'jonahholloway'
 github_username: 'jonahholloway'
 email: 'JonahChristopherHolloway@gmail.com'
 
