@@ -148,6 +148,7 @@ button.btn, input.btn {
   width: 60%;
   margin: 0 auto;
   display: table;
+  margin-bottom: 4em;
   @include bp-medium {
     width: 100%;
   }
