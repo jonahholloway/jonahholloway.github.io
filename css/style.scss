@@ -206,7 +206,7 @@ button.btn, input.btn {
 	3.0 Posts
 --------------------------------------------------------------*/
 #portfolio .container {
-  margin-top: 10em;
+  margin-top: 8em;
   @include bp-xsmall {
     margin-top: 2em;
   }
@@ -314,7 +314,7 @@ button.btn, input.btn {
 }
 
 .wow {
-	padding: 2em 0;
+	padding: 4em 0;
   &:nth-child(even) {
     background-color: #f5f7f9;
   }
