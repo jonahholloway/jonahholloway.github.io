@@ -230,13 +230,13 @@ button.btn, input.btn {
 	3.0 Posts
 --------------------------------------------------------------*/
 #portfolio {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 100px;
 }
 
 .container {
   margin-top: 0;
   .break {
-    margin: 6em 0;
+    margin: 5em 0;
     @include bp-xsmall {
       margin: 2em 0;
     }
