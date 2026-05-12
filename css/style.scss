@@ -137,12 +137,17 @@ button.btn, input.btn {
   align-items: center;
   justify-content: center;
   margin: 0;
+  position: relative;
   @include bp-xsmall {
     min-height: 80vh;
   }
-  @include bp-small {
-    min-height: 80vh;
-  }
+}
+
+.hero-container .section-jump {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hero-content {
