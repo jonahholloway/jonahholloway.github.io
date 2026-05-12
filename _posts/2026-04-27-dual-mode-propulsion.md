@@ -15,11 +15,11 @@ A design study for a reusable dual-mode propulsion aircraft, serving as a first-
 
 ### Mission Profile
 - **Payload release:** Mach 6.0 at 30 km altitude
-- **Takeoff:** Horizontal from a runway ≤ 3,500 m, liftoff speed ≤ 95 m/s
-- **Vehicle mass:** ≤ 650,000 kg at takeoff, with payload fraction ≥ 2%
+- **Takeoff:** Horizontal from a runway < 3,500 m, liftoff speed ≤ 95 m/s
+- **Vehicle mass:** 650,000 kg at takeoff, with payload fraction ≥ 2%
 
 ### Propulsion Architecture
-A turbojet or turbofan combined with ramjet operation handles takeoff through Mach 3.0+, delivering at least 40% of total mission impulse. A LOX/RP-1 liquid rocket engine ignites between Mach 3.0 and 4.5 and burns until payload release.
+A combined turbofan/ramjet engine handles operation from takeoff through Mach 3.0, delivering at least 40% of total mission impulse. A LOX/RP-1 liquid rocket engine ignites between Mach 3.0 and 4.5 and burns until payload release.
 
 ### Full Report
 <a href="/pdfs/Dual-Mode-Propulsion-Aircraft-Design.pdf" class="btn btn-default" download>Download PDF</a>
