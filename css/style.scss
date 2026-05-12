@@ -122,7 +122,7 @@ button.btn, input.btn {
 }
 
 .hero-content {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   display: table;
   @include bp-medium {
@@ -221,7 +221,7 @@ button.btn, input.btn {
 .section-title {
   position: relative;
   margin: 0 auto;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   &:after {
     content: '';
     position: absolute;
@@ -315,7 +315,6 @@ button.btn, input.btn {
 }
 
 .wow {
-  padding: 1em 0;
   &:nth-child(even) {
     background-color: #f5f7f9;
   }
