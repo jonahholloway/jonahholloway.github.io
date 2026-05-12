@@ -11,8 +11,6 @@ button_icon: "file-text-o"
 # Dragonfly CFD Analysis
 Aerodynamic analysis of reconstructed Odonata wings using OpenFOAM software.
 
-### Overview
-Brief summary of the project goals, methods, and findings goes here.
 
 ### Full Report
 <a href="/pdfs/Odonata-CFD-Analysis.pdf" class="btn btn-default" download>Download PDF</a>
