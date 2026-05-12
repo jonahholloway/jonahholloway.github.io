@@ -333,11 +333,22 @@ button.btn, input.btn {
   }
 }
 
-.wow {
-	padding: 4em 0;
+// Fade in/out on enter/exit viewport
+.scroll-fade {
+  opacity: 0;
+  transition: opacity 0.6s ease; 
+  padding: 3em 0;
+  border-bottom: 1px solid #e5e9ed;
+  &:last-child {
+    border-bottom: none;
+  }
   &:nth-child(even) {
     background-color: #f5f7f9;
   }
+}
+
+.scroll-fade.is-visible {
+  opacity: 1;
 }
 
 // vertically center content of post rows
@@ -476,18 +487,3 @@ pre {
     .highlight .vg { color: #000000 } /* Name.Variable.Global */
     .highlight .vi { color: #000000 } /* Name.Variable.Instance */
     .highlight .il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */
-
-/*--------------------------------------------------------------
-	7.0 Fade in/out on enter/exit viewport
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-	Fade in/out on enter/exit viewport
---------------------------------------------------------------*/
-.scroll-fade {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.scroll-fade.is-visible {
-  opacity: 1;
-}
