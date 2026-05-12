@@ -265,7 +265,7 @@ button.btn, input.btn {
     @include bp-small {
       display: none;
     }
-  }
+  }	
   .content {
     margin-top: 3em;
     margin-left: 3em;
@@ -311,6 +311,13 @@ button.btn, input.btn {
       color: #b9b1ad;
       background-color: #EFEBE9;
     }
+  }
+}
+
+.wow {
+  padding: 3em 0;
+  &:nth-child(even) {
+    background-color: #f5f7f9;
   }
 }
 
