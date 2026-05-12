@@ -15,16 +15,17 @@
             {% endif %}
 
             <div class="break"></div>
-	    {% for post in site.posts %}
-              <div class="wow fadeIn">
-		{% if post.position == "right" %}
-		  {% include content-right.html %}
-		{% else %}
-		  {% include content-left.html %}
-		{% endif %}
-              </div>
-            {% endfor %}
-
+			{% for post in site.posts %}
+			  {% if post.position == "right" %}
+			    <div class="wow fadeInRight">
+			      {% include content-right.html %}
+			    </div>
+			  {% else %}
+			    <div class="wow fadeInLeft" data-wow-delay="0.2s">
+			      {% include content-left.html %}
+			    </div>
+			  {% endif %}
+			{% endfor %}
           </div>
         </div>
       </div>
