@@ -231,9 +231,9 @@ button.btn, input.btn {
     margin-top: 2em;
   }
   .break {
-    margin: 2em 0;
+    margin: 4em 0;
     @include bp-xsmall {
-      margin: 4em 0;
+      margin: 2em 0;
     }
   }
 }
