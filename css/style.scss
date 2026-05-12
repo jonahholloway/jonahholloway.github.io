@@ -118,13 +118,13 @@ button.btn, input.btn {
     font-size: 20px;
     height: 60px;
     line-height: 50px;
-    padding: 15px 20px;
+    padding: 10px 15px;
   }
   
   .navbar-nav > li > a {
     font-size: 18px;
     line-height: 50px;
-    padding: 15px 20px;
+    padding: 10px 15px;
   }
 }
 
@@ -132,7 +132,7 @@ button.btn, input.btn {
 	2.0 Home Hero
 --------------------------------------------------------------*/
 .hero-container {
-  margin: 10em 0 9em 0;
+  margin: 6em 0 10em 0;
   @include bp-xsmall {
     margin: 5em 0 5em 0;
   }
