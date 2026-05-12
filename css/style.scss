@@ -109,6 +109,26 @@ button.btn, input.btn {
 }
 
 /*--------------------------------------------------------------
+	1.1 Navigation Bar
+--------------------------------------------------------------*/
+.navbar-default {
+  min-height: 80px;
+  
+  .navbar-brand {
+    font-size: 24px;
+    height: 80px;
+    line-height: 50px;
+    padding: 15px 20px;
+  }
+  
+  .navbar-nav > li > a {
+    font-size: 18px;
+    line-height: 50px;
+    padding: 15px 20px;
+  }
+}
+
+/*--------------------------------------------------------------
 	2.0 Home Hero
 --------------------------------------------------------------*/
 .hero-container {
