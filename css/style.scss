@@ -206,7 +206,7 @@ button.btn, input.btn {
 	3.0 Posts
 --------------------------------------------------------------*/
 #portfolio .container {
-  margin-top: 10em;
+  margin-top: 5em;
   @include bp-xsmall {
     margin-top: 2em;
   }
@@ -237,7 +237,7 @@ button.btn, input.btn {
 }
 
 .section-subtitle {
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
   @include bp-xsmall {
     width: 100%;
