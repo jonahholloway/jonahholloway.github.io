@@ -345,10 +345,9 @@ button.btn, input.btn {
   &:nth-child(even) {
     background-color: #f5f7f9;
   }
-}
-
-.scroll-fade.is-visible {
-  opacity: 1;
+  &.is-visible {
+    opacity: 1;
+  }
 }
 
 // vertically center content of post rows
