@@ -16,15 +16,13 @@
 
             <div class="break"></div>
 			{% for post in site.posts %}
-			  {% if post.position == "right" %}
-			    <div class="wow fadeInRight">
+			  <div class="scroll-fade">
+			    {% if post.position == "right" %}
 			      {% include content-right.html %}
-			    </div>
-			  {% else %}
-			    <div class="wow fadeInLeft" data-wow-delay="0.2s">
+			    {% else %}
 			      {% include content-left.html %}
-			    </div>
-			  {% endif %}
+			    {% endif %}
+			  </div>
 			{% endfor %}
           </div>
         </div>
