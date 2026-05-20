@@ -95,7 +95,7 @@ pagination:
 ### Phantom settings
 footer_text: '© 2026 Jonah Holloway'
 admin_name: 'Jonah Holloway'
-google_analytics: "G-70RY5ZYD6X" # Update with your own tracking ID
+google_analytics: G-70RY5ZYD6X
 enable_contact: false
 
 #### Phantom Navigation menu
