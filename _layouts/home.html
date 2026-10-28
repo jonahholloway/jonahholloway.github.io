@@ -17,7 +17,8 @@
             <div class="break"></div>
 			{% for post in site.posts %}
 			  <div class="scroll-fade">
-			    {% if post.position == "right" %}
+			    {% assign side = forloop.index0 | modulo: 2 %}
+			    {% if side == 1 %}
 			      {% include content-right.html %}
 			    {% else %}
 			      {% include content-left.html %}

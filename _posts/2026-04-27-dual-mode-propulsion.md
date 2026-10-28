@@ -10,7 +10,6 @@ featured_image: /img/posts/dual-mode-prop.jpg
 project_link: /2026/04/27/dual-mode-propulsion.html
 button_text: "Read More"
 button_icon: "file-text-o"
-position: right
 stats:
   - { value: "M 6.04", label: "Release Mach at 30.0 km" }
   - { value: "77.8%", label: "Impulse from air-breathing engines (≥ 40% required)" }

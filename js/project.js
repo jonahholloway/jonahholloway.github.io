@@ -112,13 +112,11 @@
   })();
 
   /* ---------- Satellite ops: pipeline, translator demo, challenges ---------- */
-  (function() {
-    var pipe = $('#pipeline');
-    if (!pipe) return;
-    var info = $('#pipeline-info'), steps = $$('.pipeline-steps button', pipe);
+  $$('.pipeline').forEach(function(pipe) {
+    var info = $('.pipeline-info', pipe);
     tabs($('.pipeline-steps', pipe), function(btn) { info.textContent = btn.getAttribute('data-info'); });
-    steps[0].click();
-  })();
+    $('.pipeline-steps button', pipe).click();
+  });
 
   (function() {
     var tr = $('#translator');
@@ -156,6 +154,29 @@
       $('[data-out=delta]', calc).textContent = (delta >= 0 ? '+' : '−') + fmt(Math.abs(Math.round(delta / 10) * 10)) + ' kg';
     }
     input.addEventListener('input', update);
+    update();
+  })();
+
+  /* ---------- Asteroid apparent magnitude (H-G model) ---------- */
+  (function() {
+    var calc = $('#mag-calc');
+    if (!calc) return;
+    var H0 = -5 * Math.log10(Math.sqrt(0.25) * 8 / 1329), G = 0.15;
+    var units = { alpha: '°', r: ' AU', delta: ' AU' };
+    function update() {
+      var v = {};
+      $$('input', calc).forEach(function(input) {
+        v[input.name] = +input.value;
+        $('[data-for=' + input.name + ']', calc).textContent = (input.name === 'alpha' ? input.value : (+input.value).toFixed(2)) + units[input.name];
+      });
+      var t = Math.tan(v.alpha * Math.PI / 360);
+      var phi1 = Math.exp(-3.33 * Math.pow(t, 0.63)), phi2 = Math.exp(-1.87 * Math.pow(t, 1.22));
+      var V = H0 + 5 * Math.log10(v.r * v.delta) - 2.5 * Math.log10((1 - G) * phi1 + G * phi2);
+      var D = Math.pow(10, (V - 16.8) / 5);
+      $('[data-out=v]', calc).textContent = V.toFixed(1);
+      $('[data-out=d]', calc).textContent = D < 1 ? fmt(D * 100) + ' cm' : D.toFixed(1) + ' m';
+    }
+    $$('input', calc).forEach(function(input) { input.addEventListener('input', update); });
     update();
   })();
 
