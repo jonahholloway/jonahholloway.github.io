@@ -1,0 +1,4 @@
+<figure class="project-figure{% if include.class %} {{ include.class }}{% endif %}">
+  <img src="{{ include.src }}" alt="{{ include.alt | default: include.caption | strip_html }}" loading="lazy" data-zoom>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

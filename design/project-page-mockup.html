@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project Page Template</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1440px; background: #ECE8F1; font-family: 'Open Sans', Arial, sans-serif; color: #2E2547; }
+  .page { width: 1200px; margin: 0 auto; background: #fff; border-left: 1px solid #DCD3E6; border-right: 1px solid #DCD3E6; }
+  h1, h2, h3 { font-family: 'Merriweather', Georgia, serif; font-weight: 700; color: #0a0a0a; }
+  .nav { height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 32px; border-bottom: 1px solid #E6E0EE; }
+  .nav .brand { font-size: 20px; color: #2E2547; }
+  .nav .links { display: flex; gap: 28px; font-size: 16px; color: #5E5475; }
+
+  .hero { display: flex; gap: 56px; padding: 72px 80px 56px; align-items: center; }
+  .hero-text { flex: 1; }
+  .eyebrow { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: #6A3D8C; font-weight: 700; margin-bottom: 16px; }
+  .hero h1 { font-size: 40px; line-height: 1.25; margin-bottom: 20px; }
+  .lede { font-size: 18px; line-height: 1.7; color: #4C4263; margin-bottom: 24px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .chip { font-size: 13px; padding: 6px 14px; background: #EFEBF4; color: #5E5475; border-radius: 999px; }
+  .btns { display: flex; gap: 12px; }
+  .btn { font-size: 15px; font-weight: 600; padding: 12px 24px; border-radius: 4px; border: 1px solid #DDD5E7; color: #2E2547; background: #fff; }
+  .btn.primary { background: #2E2547; color: #fff; border-color: #2E2547; }
+  .hero-img { width: 480px; height: 320px; border-radius: 6px; object-fit: cover; background: #E6E0EE; }
+
+  .stats { display: flex; margin: 0 80px; border: 1px solid #E6E0EE; border-radius: 8px; }
+  .stat { flex: 1; padding: 22px 24px; border-right: 1px solid #E6E0EE; }
+  .stat:last-child { border-right: none; }
+  .stat .v { font-family: 'Merriweather', Georgia, serif; font-size: 30px; font-weight: 700; color: #0a0a0a; }
+  .stat .l { font-size: 13px; color: #6E6585; margin-top: 4px; line-height: 1.4; }
+
+  .body { display: flex; gap: 56px; padding: 64px 80px; }
+  .toc { width: 200px; flex-shrink: 0; }
+  .toc .t { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #9C90B0; font-weight: 700; margin-bottom: 14px; }
+  .toc a { display: block; font-size: 14px; color: #6E6585; padding: 7px 0 7px 14px; border-left: 2px solid #E6E0EE; text-decoration: none; }
+  .toc a.on { color: #2E2547; font-weight: 600; border-left-color: #6A3D8C; }
+  .content { flex: 1; }
+  section { margin-bottom: 56px; }
+  h2 { font-size: 26px; margin-bottom: 16px; }
+  p { font-size: 16px; line-height: 1.8; color: #3F3656; margin-bottom: 14px; }
+
+  .phases { display: flex; gap: 0; margin-top: 20px; border-radius: 8px; overflow: hidden; }
+  .phase { padding: 20px; color: #fff; }
+  .phase .m { font-size: 12px; opacity: .85; letter-spacing: 1px; text-transform: uppercase; }
+  .phase .n { font-family: 'Merriweather', Georgia, serif; font-size: 18px; font-weight: 700; margin: 6px 0; }
+  .phase .d { font-size: 13px; line-height: 1.5; opacity: .92; }
+  .tf { background: #3B6FD8; flex: 1.8; } .rj { background: #8A4FD1; flex: 2.2; } .rk { background: #C2448F; flex: 2; }
+
+  .viz { border: 1px solid #E6E0EE; border-radius: 8px; padding: 20px; margin-top: 16px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 16px; }
+  .tab { font-size: 13px; padding: 7px 14px; border-radius: 4px; background: #F6F3F9; color: #5E5475; }
+  .tab.on { background: #2E2547; color: #fff; }
+  .chart { height: 300px; background: linear-gradient(#F6F3F9 1px, transparent 1px) 0 0/100% 60px; border-left: 1px solid #DCD3E6; border-bottom: 1px solid #DCD3E6; position: relative; }
+  .chart svg { position: absolute; inset: 0; }
+  .readout { display: flex; gap: 24px; margin-top: 14px; font-size: 13px; color: #5E5475; }
+  .readout b { color: #0a0a0a; font-size: 15px; }
+  .slider { height: 6px; background: #E6E0EE; border-radius: 3px; margin-top: 16px; position: relative; }
+  .slider .k { position: absolute; left: 62%; top: -6px; width: 18px; height: 18px; border-radius: 50%; background: #6A3D8C; }
+  .legend { display: flex; gap: 18px; font-size: 13px; color: #5E5475; margin-bottom: 10px; }
+  .legend span::before { content: ''; display: inline-block; width: 14px; height: 3px; margin-right: 6px; vertical-align: middle; background: var(--c); }
+
+  figure { margin-top: 16px; }
+  figcaption { font-size: 13px; color: #6E6585; margin-top: 8px; line-height: 1.5; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+  th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #9C90B0; padding: 10px 12px; border-bottom: 2px solid #E6E0EE; }
+  td { padding: 10px 12px; border-bottom: 1px solid #EFEBF4; color: #3F3656; }
+  .pass { font-size: 11px; font-weight: 700; color: #3B4FB0; background: #E6EAFB; padding: 3px 8px; border-radius: 3px; }
+
+  .takeaways { display: flex; gap: 16px; }
+  .card { flex: 1; background: #F6F3F9; border-radius: 8px; padding: 20px; }
+  .card h3 { font-size: 16px; margin-bottom: 8px; }
+  .card p { font-size: 14px; line-height: 1.6; margin: 0; }
+
+  .next { margin: 0 80px 64px; padding: 28px 32px; border-radius: 8px; background: #2E2547; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+  .next .k { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .7; }
+  .next .t { font-family: 'Merriweather', Georgia, serif; font-size: 20px; font-weight: 700; margin-top: 6px; }
+  .footer { padding: 20px 80px; border-top: 1px solid #efefef; font-size: 12px; font-weight: 600; color: #9C90B0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="nav"><div class="brand">Jonah Holloway</div><div class="links"><span>Home</span><span>Projects</span></div></div>
+
+  <div class="hero">
+    <div class="hero-text">
+      <div class="eyebrow">AE 4451 · Georgia Tech · April 2026</div>
+      <h1>Dual-Mode Propulsion Aircraft Design</h1>
+      <p class="lede">A reusable, horizontal-takeoff launch aircraft that carries a 15,000 kg payload to Mach 6 at 30 km using a turbofan, a ramjet and a LOX/RP-1 rocket in sequence.</p>
+      <div class="chips"><span class="chip">Propulsion cycle analysis</span><span class="chip">Trajectory simulation</span><span class="chip">MATLAB · ode15s</span><span class="chip">Sole author</span></div>
+      <div class="btns"><span class="btn primary">Download full report (PDF)</span><span class="btn">Jump to results</span></div>
+    </div>
+    <img class="hero-img" src="../img/posts/dual-mode-prop.jpg" alt="">
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="v">M 6.04</div><div class="l">Release Mach at 30.0 km</div></div>
+    <div class="stat"><div class="v">77.8%</div><div class="l">Impulse from air-breathing engines (≥ 40% required)</div></div>
+    <div class="stat"><div class="v">2.31%</div><div class="l">Payload fraction (≥ 2% required)</div></div>
+    <div class="stat"><div class="v">549 s</div><div class="l">Takeoff to payload release</div></div>
+  </div>
+
+  <div class="body">
+    <div class="toc">
+      <div class="t">On this page</div>
+      <a class="on">Overview</a><a>Propulsion architecture</a><a>Trajectory</a><a>Cycle analysis</a><a>Rocket stage</a><a>Mass &amp; feasibility</a><a>vs. Skylon / SABRE</a><a>Takeaways</a>
+    </div>
+    <div class="content">
+      <section>
+        <h2>Overview</h2>
+        <p>No single engine works efficiently from a standing start to Mach 6. This study sizes a serial three-engine system and checks it against every mission requirement with a coupled trajectory and cycle-analysis model.</p>
+      </section>
+
+      <section>
+        <h2>Propulsion architecture</h2>
+        <p>Each engine hands off where the next one becomes more efficient.</p>
+        <div class="phases">
+          <div class="phase tf"><div class="m">M 0 → 1.8</div><div class="n">Afterburning turbofan</div><div class="d">Low bypass (0.4) keeps thrust through the transonic regime.</div></div>
+          <div class="phase rj"><div class="m">M 1.8 → 4.0</div><div class="n">Ramjet</div><div class="d">Ram compression only, flown below 20 km for mass flow.</div></div>
+          <div class="phase rk"><div class="m">M 4.0 → 6.0</div><div class="n">LOX/RP-1 rocket</div><div class="d">66 s burn climbs to the 30 km release point.</div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Trajectory</h2>
+        <p>Drag the slider to step through the 549 s mission.</p>
+        <div class="viz">
+          <div class="tabs"><span class="tab on">Altitude</span><span class="tab">Velocity</span><span class="tab">Mach</span><span class="tab">Mass</span></div>
+          <div class="legend"><span style="--c:#3B6FD8">Turbofan + AB</span><span style="--c:#8A4FD1">Ramjet</span><span style="--c:#C2448F">Rocket</span></div>
+          <div class="chart">
+            <svg viewBox="0 0 600 300" preserveAspectRatio="none" width="100%" height="100%">
+              <polyline fill="none" stroke="#3B6FD8" stroke-width="3" points="0,300 35,300 60,295 90,285 123,270"/>
+              <polyline fill="none" stroke="#8A4FD1" stroke-width="3" points="123,270 200,240 250,222 320,200 400,185 483,173"/>
+              <polyline fill="none" stroke="#C2448F" stroke-width="3" points="483,173 495,160 510,110 525,60 540,25 549,15"/>
+              <line x1="372" y1="0" x2="372" y2="300" stroke="#6A3D8C" stroke-dasharray="4 4"/>
+            </svg>
+          </div>
+          <div class="slider"><div class="k"></div></div>
+          <div class="readout"><span>t <b>340 s</b></span><span>Altitude <b>12.2 km</b></span><span>Velocity <b>1,070 m/s</b></span><span>Mach <b>3.6</b></span><span>Engine <b>Ramjet</b></span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Mass &amp; feasibility</h2>
+        <table>
+          <tr><th>Requirement</th><th>Achieved</th><th>Threshold</th><th></th></tr>
+          <tr><td>Release Mach</td><td>6.04</td><td>6.0 ± 0.2</td><td><span class="pass">PASS</span></td></tr>
+          <tr><td>Payload fraction</td><td>0.0231</td><td>≥ 0.02</td><td><span class="pass">PASS</span></td></tr>
+          <tr><td>Air-breathing impulse</td><td>77.8%</td><td>≥ 40%</td><td><span class="pass">PASS</span></td></tr>
+          <tr><td>Rocket burn duration</td><td>66.4 s</td><td>60–180 s</td><td><span class="pass">PASS</span></td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Takeaways</h2>
+        <div class="takeaways">
+          <div class="card"><h3>Density beats Isp here</h3><p>RP-1 tanks are about 6× smaller than LH2 for a short 660 m/s rocket burn.</p></div>
+          <div class="card"><h3>Air-breathing does the work</h3><p>Three-quarters of total impulse comes before the rocket lights.</p></div>
+          <div class="card"><h3>Mature hardware</h3><p>Every subsystem is flight-proven, unlike SABRE's precooler.</p></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="next"><div><div class="k">Next project</div><div class="t">Dragonfly CFD Analysis</div></div><span class="btn">View →</span></div>
+  <div class="footer">© 2026 Jonah Holloway</div>
+</div>
+</body>
+</html>

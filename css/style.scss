@@ -16,8 +16,8 @@
 @import '../_sass/bootstrap';
 @import '../_sass/mixins';
 
-$primary: #0a0a0a;
-$secondary: #FF7B7B;
+$primary: #1F1730;
+$secondary: #8F6BB8;
 
 %opensans { font-family: 'Open Sans', sans-serif; }
 %merriweather { font-family: 'Merriweather', serif; }
@@ -33,7 +33,7 @@ $secondary: #FF7B7B;
 }
 
 body {
-  background-color: #e9edf0;
+  background-color: #ECE8F1;
   @extend %opensans;
   -webkit-font-smoothing: antialiased;
 }
@@ -55,7 +55,7 @@ p {
 a {
   @include transition(color .2s ease-in-out);
   &:hover {
-    color: #FF5B33;
+    color: #6A3D8C;
     text-decoration: none;
   }
 }
@@ -67,16 +67,16 @@ img {
 button.btn, input.btn {
   padding: 12px 35px;
   margin: 1em 0.5em;
-  border: solid 1px #d5e0e7;
+  border: solid 1px #DDD5E7;
   border-radius: 4px;
-  color: #2E4453;
+  color: #2E2547;
   font-weight: 600;
   &:hover, &.btn-default:hover {
     background-color: white;
-    border: solid 1px #b0c5d2;
-    -moz-box-shadow: 0 1px 0 #b0c5d2;
-    -webkit-box-shadow: 0 1px 0 #b0c5d2;
-    box-shadow: 0 1px 0 #b0c5d2;
+    border: solid 1px #B9A9CC;
+    -moz-box-shadow: 0 1px 0 #B9A9CC;
+    -webkit-box-shadow: 0 1px 0 #B9A9CC;
+    box-shadow: 0 1px 0 #B9A9CC;
   }
   i {
     padding-right: 0.5em;
@@ -89,8 +89,8 @@ button.btn, input.btn {
 
 .main {
   background-color: white;
-  border-left: solid 1px #cedfea;
-  border-right: solid 1px #cedfea;
+  border-left: solid 1px #DCD3E6;
+  border-right: solid 1px #DCD3E6;
   &.container {
     padding: 0;
   }
@@ -99,7 +99,7 @@ button.btn, input.btn {
 .section-jump {
   position: relative;
   top: 0;
-  color: #C8D7E1;
+  color: #CFC4DD;
   margin: 0 auto;
   display: table;
   @include transition(top .2s ease-in);
@@ -264,7 +264,7 @@ button.btn, input.btn {
     top: 1.35em;
     width: 3em;
     height: 3px;
-    background-color: #ECEFF1;
+    background-color: #EFEBF4;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -317,7 +317,7 @@ button.btn, input.btn {
         left: 0;
         width: 3em;
         height: 3px;
-        background-color: #ECEFF1;
+        background-color: #EFEBF4;
       }
     }
     .excerpt {
@@ -335,8 +335,8 @@ button.btn, input.btn {
     .tags, .categories {
       margin: 2em 0;
       span {
-        color: #9eb1bd;
-        background-color: #ECEFF1;
+        color: #9C90B0;
+        background-color: #EFEBF4;
         padding: 0.5em 1.5em;
         display: inline-block;
         margin-bottom: 0.5em;
@@ -354,12 +354,12 @@ button.btn, input.btn {
   opacity: 0;
   transition: opacity 0.6s ease; 
   padding: 3em 0;
-  border-bottom: 1px solid #e5e9ed;
+  border-bottom: 1px solid #E6E0EE;
   &:last-child {
     border-bottom: none;
   }
   &:nth-child(even) {
-    background-color: #f5f7f9;
+    background-color: #F6F3F9;
   }
   &.is-visible {
     opacity: 1;
@@ -389,7 +389,7 @@ button.btn, input.btn {
   p {
     font-size: 12px;
     font-weight: 600;
-    color: #9eb1bd;
+    color: #9C90B0;
     margin: 0;
     padding: 10px 0;
     @include bp-xsmall {
@@ -502,3 +502,5 @@ pre {
     .highlight .vg { color: #000000 } /* Name.Variable.Global */
     .highlight .vi { color: #000000 } /* Name.Variable.Instance */
     .highlight .il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */
+
+@import '../_sass/project';

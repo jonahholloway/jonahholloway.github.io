@@ -102,3 +102,6 @@ enable_contact: false
 enable_nav: true
 nav_item:
   - { url: '/', text: 'Home' }
+
+# Keep design source files out of the published site
+exclude: [design, CHANGELOG.md, Gemfile, Gemfile.lock, phantom.gemspec, LICENSE]

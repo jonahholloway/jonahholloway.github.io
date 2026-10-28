@@ -1,0 +1,77 @@
+{% include header.html %}
+
+  <article class="project">
+
+    <header class="project-hero">
+      <div class="project-hero-text">
+        {% if page.eyebrow %}<p class="project-eyebrow">{{ page.eyebrow }}</p>{% endif %}
+        <h1>{{ page.title }}</h1>
+        <p class="project-lede">{{ page.summary | default: page.lead_text }}</p>
+
+        {% if page.chips %}
+        <ul class="project-chips">
+          {% for chip in page.chips %}<li>{{ chip }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class="project-actions">
+          {% if page.report_pdf %}
+          <a class="project-btn primary" href="{{ page.report_pdf }}" download><i class="fa fa-file-pdf-o"></i>Download full report (PDF)</a>
+          {% endif %}
+          <a class="project-btn" href="#results"><i class="fa fa-line-chart"></i>Jump to results</a>
+        </div>
+      </div>
+
+      {% if page.featured_image %}
+      <img class="project-hero-img" src="{{ page.featured_image }}" alt="{{ page.title }}">
+      {% endif %}
+    </header>
+
+    {% if page.stats %}
+    <dl class="project-stats">
+      {% for stat in page.stats %}
+      <div class="project-stat">
+        <dt>{{ stat.label }}</dt>
+        <dd>{{ stat.value }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+    {% endif %}
+
+    <div class="project-body">
+      <nav class="project-toc" aria-label="On this page">
+        <p class="project-toc-title">On this page</p>
+        <ul id="project-toc"></ul>
+      </nav>
+
+      <div class="project-content">
+        {{ content }}
+      </div>
+    </div>
+
+    {% assign next_project = page.previous | default: page.next %}
+    {% if next_project %}
+    <a class="project-next" href="{{ next_project.url | prepend: site.baseurl }}">
+      <span>
+        <span class="project-next-label">Next project</span>
+        <span class="project-next-title">{{ next_project.title }}</span>
+      </span>
+      <i class="fa fa-arrow-right fa-lg"></i>
+    </a>
+    {% endif %}
+
+  </article>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close"><i class="fa fa-times fa-2x"></i></button>
+    <img alt="">
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js" integrity="sha384-dug+JxfBvklEQdJ4AYuBBAIScUz0bVN73xpy273gcAwHjb3qI0fXmuYNaNfdyYJG" crossorigin="anonymous"></script>
+  <script src="{{ "/js/project.js" | prepend: site.baseurl }}"></script>
+
+{% include footer.html %}
