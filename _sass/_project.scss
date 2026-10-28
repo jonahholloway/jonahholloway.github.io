@@ -300,6 +300,83 @@ article.project .takeaways, article.project .setup-cards {
   p { font-size: 14px; line-height: 1.6; margin: 0; }
 }
 
+/* Satellite ops page */
+.problem-grid {
+  display: flex; align-items: stretch; gap: 16px; margin: 16px 0 24px;
+  @include bp-xsmall { flex-direction: column; }
+  .problem-col {
+    flex: 1; border: 1px solid $line; border-radius: 8px; padding: 18px 20px;
+    &.highlight { background: $ink; border-color: $ink; h3, li { color: #fff; } li::marker { color: #CFC4DD; } }
+  }
+  .problem-arrow { display: flex; align-items: center; color: $accent; @include bp-xsmall { justify-content: center; transform: rotate(90deg); } }
+}
+article.project .problem-grid {
+  h3 { margin: 0 0 10px; font-size: 17px; }
+  ul { margin: 0; padding-left: 18px; }
+  li { font-size: 14px; line-height: 1.6; margin-bottom: 6px; }
+}
+
+.pipeline {
+  position: relative; border: 1px solid $line; border-radius: 8px; padding: 20px; margin: 16px 0 24px;
+  .pipeline-track {
+    position: absolute; left: 10%; right: 10%; top: 50px; height: 2px; background: $line;
+    @include bp-xsmall { display: none; }
+  }
+  .pipeline-pulse {
+    position: absolute; top: -4px; width: 10px; height: 10px; border-radius: 50%; background: $tf;
+    animation: pipeline-flow 3s linear infinite;
+  }
+  .pipeline-steps {
+    position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+    @include bp-xsmall { grid-template-columns: 1fr 1fr; }
+    button {
+      display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 6px; border: 1px solid $line; border-radius: 8px;
+      background: #fff; color: $ink; cursor: pointer; @include transition(all .2s);
+      i { font-size: 22px; width: 44px; height: 44px; line-height: 44px; border-radius: 50%; background: $soft; color: $accent; }
+      b { font-size: 14px; }
+      small { font-size: 11px; color: $muted; text-align: center; line-height: 1.3; }
+      &:hover { border-color: #B9A9CC; }
+      &.on { background: $ink; border-color: $ink; color: #fff; i { background: $accent; color: #fff; } small { color: #CFC4DD; } }
+    }
+  }
+}
+article.project .pipeline-info { font-size: 14px; color: $ink; background: $soft; border-radius: 6px; padding: 12px 16px; margin: 16px 0 0; min-height: 48px; }
+@keyframes pipeline-flow { from { left: 0; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } to { left: 100%; opacity: 0; } }
+
+.translator {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 6px;
+  @include bp-small { grid-template-columns: 1fr; }
+  @include bp-xsmall { grid-template-columns: 1fr; }
+  .tr-col { min-width: 0; border: 1px solid $line; border-radius: 8px; padding: 14px;
+    &:last-child { grid-column: 1 / -1; } }
+  .tr-tabs { margin-bottom: 10px; button { font-size: 12px; padding: 5px 10px; } }
+  .tr-source { margin: 0; padding-left: 20px; }
+  .tr-source li { font-size: 13px; line-height: 1.5; padding: 4px 6px; border-radius: 4px; cursor: default;
+    &.indent { margin-left: 18px; } }
+  .tr-code {
+    margin: 0; padding: 0; border: 0; background: none; font-size: 12px; line-height: 1.7; color: $ink; white-space: pre; overflow-x: auto;
+    span { display: inline-block; min-width: 100%; padding: 0 6px; border-radius: 4px; cursor: default; }
+  }
+  [data-node] { @include transition(background .15s, color .15s); }
+  [data-node].lit { background: rgba(106, 61, 140, .14); color: $primary; box-shadow: inset 3px 0 0 $accent; }
+}
+article.project .tr-label { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: $muted; margin: 0 0 10px; }
+
+.challenges {
+  margin: 16px 0 24px;
+  .challenge {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 14px; border: 1px solid $line; border-radius: 8px; overflow: hidden;
+    @include bp-xsmall { grid-template-columns: 1fr; }
+    &[hidden] { display: none; }
+    > div { padding: 16px 18px; border-right: 1px solid $line; position: relative;
+      &:last-child { border-right: 0; }
+      @include bp-xsmall { border-right: 0; border-bottom: 1px solid $line; } }
+    span { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: $accent; margin-bottom: 6px; }
+    .impact { background: $soft; }
+  }
+}
+article.project .challenge p { font-size: 14px; line-height: 1.6; margin: 0; }
+
 .engine {
   margin: 16px 0 0; padding: 12px 12px 4px; border: 1px solid $line; border-bottom: 0; border-radius: 8px 8px 0 0;
   svg { display: block; width: 100%; height: auto; }

@@ -111,6 +111,39 @@
     select(0);
   })();
 
+  /* ---------- Satellite ops: pipeline, translator demo, challenges ---------- */
+  (function() {
+    var pipe = $('#pipeline');
+    if (!pipe) return;
+    var info = $('#pipeline-info'), steps = $$('.pipeline-steps button', pipe);
+    tabs($('.pipeline-steps', pipe), function(btn) { info.textContent = btn.getAttribute('data-info'); });
+    steps[0].click();
+  })();
+
+  (function() {
+    var tr = $('#translator');
+    if (!tr) return;
+    var nodes = $$('[data-node]', tr);
+    function light(id) { nodes.forEach(function(n) { n.classList.toggle('lit', n.getAttribute('data-node') === id); }); }
+    nodes.forEach(function(n) {
+      n.addEventListener('mouseenter', function() { light(n.getAttribute('data-node')); });
+      n.addEventListener('click', function() { light(n.getAttribute('data-node')); });
+    });
+    tr.addEventListener('mouseleave', function() { light(null); });
+    tabs($('.tr-tabs', tr), function(btn) {
+      var target = btn.getAttribute('data-target');
+      $$('[data-out]', tr).forEach(function(p) { p.hidden = p.getAttribute('data-out') !== target; });
+    });
+  })();
+
+  (function() {
+    var box = $('#challenges');
+    if (!box) return;
+    tabs($('.viz-tabs', box), function(btn) {
+      $$('.challenge', box).forEach(function(c) { c.hidden = c.getAttribute('data-c') !== btn.getAttribute('data-c'); });
+    });
+  })();
+
   /* ---------- Solid motor trade calculator ---------- */
   (function() {
     var calc = $('#srm-calc');
