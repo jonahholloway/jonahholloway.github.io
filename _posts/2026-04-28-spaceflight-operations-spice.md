@@ -11,10 +11,10 @@ project_link: /2026/04/28/spaceflight-operations-spice.html
 button_text: "Read More"
 button_icon: "file-text-o"
 stats:
-  - { value: "6", label: "Studies built on real NASA flight data" }
+  - { value: "0.01%", label: "Error in Earth's mass, recovered only from Lucy's two swing-bys" }
+  - { value: "0.78 m", label: "Smallest ground telescope able to see Donaldjohanson at Lucy's flyby" }
+  - { value: "81,206 km²", label: "Ceres surface mapped from four Dawn images" }
   - { value: "500,001", label: "Time steps searched for Lucy's closest approaches" }
-  - { value: "1,000", label: "Monte Carlo trials for Apophis' orbit uncertainty" }
-  - { value: "0.2755", label: "Mean geometric albedo of Dinkinesh, consistent with an S-type asteroid" }
 ---
 
 ## Overview
@@ -56,7 +56,9 @@ The first study was the foundation of everything else: moving vectors between fr
 
 **The Moon in a Sun–Earth rotating frame.** Next I queried DE440 for the Moon's state every 0.1 days through all of 2026. I rotated it into a frame {ξ, η, ζ}, with ξ pointing from the Sun to Earth and ζ along Earth's orbital angular momentum. The rotation matrix changes at every time step, so velocities need the transport-theorem correction too, not just a rotation.
 
-## Lucy's trajectory
+{% include figure.html src="/img/projects/spaceflight-ops/moon-position.png" caption="The Moon's position relative to Earth in the Sun–Earth rotating frame over 2026. In-plane ξ and η swing ±4×10⁵ km each month, while ζ shows the Moon's small tilt out of Earth's orbital plane." class="narrow" %}
+
+## Lucy's trajectory {#results}
 
 NASA's **Lucy** mission is touring Jupiter's Trojan asteroids. These two swarms share Jupiter's orbit, 60° ahead of and behind the planet at its L4 and L5 Lagrange points. I first summarized the mission from recent journal articles (Levison et al. 2025; Douglas-Bradshaw et al. 2025), then reconstructed its trajectory from the mission SPK.
 
@@ -67,7 +69,16 @@ NASA's **Lucy** mission is touring Jupiter's Trojan asteroids. These two swarms 
   <div><span>Method</span><b>Global minimum of Lucy–target distance</b></div>
 </div>
 
-From each target's closest-approach epoch, I drew the trajectories of Lucy, Earth and all four asteroids in a **Jupiter-centered co-rotating frame**: ξ along the Sun–Jupiter line, ζ along Jupiter's orbital angular momentum. In this frame Jupiter stands still, the Trojan swarms become two fixed clouds, and Lucy's path shows up as loops that carry it out to each swarm. The hero image above is a stylized sketch of that view.
+| Target | Closest approach (UTC) |
+|---|---|
+| Donaldjohanson | 2025 Apr 20, 18:14:27 |
+| Leucus | 2028 Apr 18, 13:47:41 |
+| Orus | 2028 Nov 11, 14:10:40 |
+| Patroclus | 2033 Mar 02, 02:37:41 |
+
+I then drew the trajectories of Lucy, Earth and all four asteroids in a **frame that co-rotates with Jupiter**: ξ along the Sun–Jupiter line, ζ along Jupiter's orbital angular momentum. In this frame Jupiter stands still and each Trojan traces a small libration loop around its Lagrange point. Lucy's path loops around the inner solar system, then climbs out to the L4 swarm (Leucus, Orus) and swings back down to L5 (Patroclus).
+
+{% include figure.html src="/img/projects/spaceflight-ops/lucy-trajectory.png" caption="Lucy (purple), Earth (blue) and the four targets in Jupiter's co-rotating frame, with each closest approach marked. Jupiter itself (not plotted) stays fixed on the +ξ axis at about 5.2 AU." class="narrow" %}
 
 ## Observing Donaldjohanson
 
@@ -99,9 +110,24 @@ Try the model below. Distances are in AU: r from the Sun, Δ from Earth.
   <p class="calc-note">Uses D = 8 km, p<sub>V</sub> = 0.25 (H₀ ≈ 12.6), G = 0.15 and the limiting-magnitude relation D<sub>min</sub> = 10<sup>(V − 16.8)/5</sup> m, as in my analysis. The slider positions are only example geometries, not the flyby values.</p>
 </div>
 
-**Two lessons from this study:**
-- **Sampling rate matters.** At daily sampling, the Sun–DJ–Lucy phase angle seemed to jump at the flyby. In reality it swings from about 15° through 90° to 165° in a few hours as Lucy passes the asteroid. Resampling hourly around closest approach recovered the smooth curve.
-- **The Earth-rotation model matters.** I repeated the VLT elevation calculation with the IAU_EARTH model and the high-precision ITRF93 kernel. This showed how much the choice of model shifts a predicted observing window.
+### Results
+
+<div class="spec-grid">
+  <div><span>Magnitude at flyby</span><b>V ≈ 16.27</b></div>
+  <div><span>Minimum aperture</span><b>≈ 0.78 m</b></div>
+  <div><span>VLT window (UTC)</span><b>20 Apr 22:19 → 21 Apr 05:54</b></div>
+</div>
+
+<div class="timestep"><div class="timestep-pair">
+{% include figure.html src="/img/projects/spaceflight-ops/dj-phase-angles.jpg" caption="Phase angle over 2025. The Sun–DJ–Lucy angle flips from about 15° to 165° as Lucy flies past in April." %}
+{% include figure.html src="/img/projects/spaceflight-ops/dj-magnitude.jpg" caption="DJ's apparent magnitude from Earth. It is brightest near opposition in February (V ≈ 14.4)." %}
+</div></div>
+
+The phase-angle jump is real, not a bug: as Lucy passes the asteroid, the angle swings from about 15° through 90° to 165° in just a few hours. Daily sampling makes that look like a step, so I resampled hourly around closest approach to see the smooth curve.
+
+{% include figure.html src="/img/projects/spaceflight-ops/vlt-elevation.jpg" caption="Elevation of DJ (blue) and the Sun (red) from the VLT within ±12 hours of the flyby. Shading marks when each is above the horizon. The top panel uses IAU_EARTH, the bottom ITRF93." class="narrow" %}
+
+**Does the Earth-rotation model matter?** I repeated the elevation calculation with the simple IAU_EARTH model and the high-precision ITRF93 kernel, which adds precession, nutation and polar motion. Over a ±12-hour window the two curves are indistinguishable, so the simpler model is fine for planning this observation.
 
 ## Pointing Lucy's camera
 
@@ -143,10 +169,7 @@ In November 2023 Lucy flew past the small asteroid **Dinkinesh** and discovered 
 2. Used SPICE to get the Sun and Lucy directions at the image time, which gives the incoming solar flux and the phase geometry.
 3. Computed p = πI / F for every pixel of Dinkinesh, masking out Selam.
 
-<div class="spec-grid two">
-  <div><span>Mean geometric albedo</span><b>p̄ = 0.2755</b></div>
-  <div><span>Interpretation</span><b>Consistent with a stony S-type asteroid</b></div>
-</div>
+The mean geometric albedo came out at **p̄ = 0.2755**, consistent with a stony S-type asteroid.
 
 ## Earth &amp; Ceres
 
@@ -156,7 +179,24 @@ Lucy flew past Earth for gravity assists in 2022 and 2024. Using **only** Lucy's
 
 <div class="eq">\[ \mu_\oplus = \frac{v_1^{2} - v_2^{2}}{2\left(\dfrac{1}{r_1} - \dfrac{1}{r_2}\right)}, \qquad M_\oplus = \frac{\mu_\oplus}{G}, \qquad R_{\mathrm{SOI}} = a\left(\frac{\mu_\oplus}{\mu_\odot}\right)^{2/5} \]</div>
 
-Each flyby gives an independent estimate of μ, so the two act as a consistency check before they are averaged. That μ then gives Earth's mass, sphere of influence and Lucy's hyperbolic excess speed v∞. Finding the flybys reliably meant taking the two *deepest* minima of Lucy's distance from Earth, not simply the first two. Each perigee was then refined to the second.
+Finding the flybys reliably meant taking the two *deepest* minima of Lucy's distance from Earth, not simply the first two. Each perigee was then refined to the second.
+
+| | Flyby 1 · 16 Oct 2022 | Flyby 2 · 13 Dec 2024 |
+|---|---:|---:|
+| Perigee radius r<sub>p</sub> | 6,737.8 km | 6,734.5 km |
+| Perigee speed v<sub>p</sub> | 12.116 km/s | 15.233 km/s |
+| μ<sub>E</sub> | 3.9818 × 10⁵ km³/s² | 3.9896 × 10⁵ km³/s² |
+| v<sub>∞</sub> | 5.335 km/s | 10.660 km/s |
+
+The two independent values of μ agree to within **0.20%**. Averaged, they give:
+
+<div class="spec-grid">
+  <div><span>Gravitational parameter</span><b>3.9857 × 10⁵ km³/s²</b></div>
+  <div><span>Earth mass</span><b>5.9717 × 10²⁴ kg</b></div>
+  <div><span>Sphere of influence</span><b>9.2462 × 10⁵ km</b></div>
+</div>
+
+Both μ and Earth's mass land within **0.01%** of the published values (3.9860 × 10⁵ km³/s² and 5.9722 × 10²⁴ kg), using nothing but the spacecraft's own trajectory.
 
 ### Orthorectified mosaic of Ceres
 
@@ -174,10 +214,22 @@ The **Dawn** spacecraft orbited the dwarf planet Ceres. I took four of its Frami
   <p class="pipeline-info">Select a step above.</p>
 </div>
 
+Ceres was modeled with its PCK radii (a = b = 482.1 km, c = 445.9 km). The four frames land in the northern mid-latitudes, around 190°–235° E and 20°–60° N.
+
+| Image | Epoch (UTC) | Area covered |
+|---|---|---:|
+| 0041256 | 2015-08-24 15:08:40 | 20,382 km² |
+| 0041267 | 2015-08-24 15:29:11 | 20,318 km² |
+| 0041270 | 2015-08-24 15:43:24 | 20,085 km² |
+| 0041450 | 2015-08-25 09:43:46 | 20,421 km² |
+| **Total** (overlap included) | | **81,206 km²** |
+
+{% include figure.html src="/img/projects/spaceflight-ops/ceres-mosaic.jpg" caption="The four Dawn FC2 frames orthorectified onto Ceres' surface. Brightness differs between frames because raw DN values were kept, but craters and ridges run continuously across the seams, which confirms the geometry lines up." %}
+
 ## Takeaways
 
 <div class="takeaways">
   <div><h3>Frames are everything</h3><p>Almost every bug traced back to a frame: a missing FK/CK pair, a −z boresight, or an image origin in the wrong corner. Checking each transformation on its own saved hours.</p></div>
   <div><h3>Resolution is a choice</h3><p>Flybys happen in hours while missions last decades. A good search runs coarse, then fine, at every stage.</p></div>
-  <div><h3>Validate with physics</h3><p>Two independent Earth-μ estimates, an albedo that matches S-type asteroids, and proper rotation matrices: each result came with its own sanity check.</p></div>
+  <div><h3>Validate with physics</h3><p>Two Earth-μ estimates within 0.20% of each other, seams that line up across the Ceres mosaic, and proper rotation matrices: each result came with its own sanity check.</p></div>
 </div>
