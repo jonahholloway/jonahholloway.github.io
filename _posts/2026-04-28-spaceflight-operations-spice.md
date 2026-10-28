@@ -178,6 +178,8 @@ In November 2023 Lucy flew past the small asteroid **Dinkinesh** and discovered 
 
 The mean geometric albedo came out at **p̄ = 0.2755**, consistent with a stony S-type asteroid.
 
+{% include figure.html src="/img/projects/spaceflight-ops/dinkinesh-albedo.png" caption="Pixel-by-pixel geometric albedo of Dinkinesh, with Selam masked out. Darker means more reflective; the bright lower limb and central ridge reach p ≈ 0.45. Every term in the albedo formula is a single number per image, so a units correction scales all pixels equally. This map is my MATLAB output with that one factor applied, so its mean matches p̄ = 0.2755." class="narrow" %}
+
 ## Earth &amp; Ceres
 
 ### Weighing Earth with Lucy's swing-bys
