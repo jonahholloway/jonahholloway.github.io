@@ -6,7 +6,9 @@ lead_text: "Mission analysis on real NASA Lucy and Dawn data: trajectories, obse
 summary: "Six mission-analysis studies built in MATLAB on NASA's SPICE toolkit, using real flight data from the Lucy and Dawn missions. They cover reference frames, interplanetary trajectories, ground-based observability, spacecraft image pointing, orbit uncertainty, albedo mapping and surface orthorectification."
 eyebrow: "AE 4361 · Spaceflight Operations · Georgia Tech · Spring 2026"
 chips: ["MATLAB", "NASA SPICE (MICE)", "Orbital Mechanics", "Image Processing"]
-featured_image: /img/posts/spaceflight-ops.svg
+featured_image: /img/posts/lucy-trojan.jpg
+featured_caption: "Artist's illustration of NASA's Lucy spacecraft flying by a Trojan asteroid."
+featured_credit: "NASA/Southwest Research Institute"
 project_link: /2026/04/28/spaceflight-operations-spice.html
 button_text: "Read More"
 button_icon: "file-text-o"

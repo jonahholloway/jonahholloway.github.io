@@ -40,6 +40,13 @@ article.project {
     width: 44%; max-width: 480px; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px;
     @include bp-xsmall { width: 100%; max-width: none; }
   }
+  .project-hero-figure {
+    width: 44%; max-width: 480px; margin: 0;
+    @include bp-xsmall { width: 100%; max-width: none; }
+    .project-hero-img { display: block; width: 100%; max-width: none; }
+    figcaption { font-size: 12px; line-height: 1.5; color: $muted; margin-top: 8px; }
+    figcaption span { color: #9C90B0; }
+  }
 }
 
 article.project .project-eyebrow {
