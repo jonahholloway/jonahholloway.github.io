@@ -230,6 +230,7 @@ article.project .viz-caption { font-size: 14px; color: $muted; margin: 12px 0 0;
   margin: 20px 0 28px;
   text-align: center;
   img { display: block; width: auto; max-width: 100%; margin: 0 auto; border-radius: 6px; border: 1px solid $line; cursor: zoom-in; background: #fff; }
+  video { display: block; width: 100%; margin: 0 auto; border-radius: 6px; border: 1px solid $line; background: #000; }
   figcaption { font-size: 13px; line-height: 1.5; color: $muted; margin: 8px auto 0; max-width: 640px; }
   &.narrow { max-width: 560px; margin-left: auto; margin-right: auto; }
 }

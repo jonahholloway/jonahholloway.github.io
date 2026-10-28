@@ -135,6 +135,11 @@ The phase-angle jump is real, not a bug: as Lucy passes the asteroid, the angle 
 
 During the Donaldjohanson flyby, Lucy's **L'LORRI** camera took the images I used here. I took six raw FITS frames from 20 April 2025 and asked SPICE where DJ *should* appear in each one. I then rotated each frame so that ecliptic north is up, which makes frames comparable with each other and with star charts.
 
+<figure class="project-figure narrow">
+  <video src="/img/projects/spaceflight-ops/lucy-donaldjohanson-flyby.mp4" poster="/img/projects/spaceflight-ops/lucy-donaldjohanson-flyby.jpg" autoplay loop muted playsinline controls preload="metadata" aria-label="L'LORRI image sequence of asteroid Donaldjohanson during Lucy's flyby"></video>
+  <figcaption>Donaldjohanson as seen by L'LORRI during Lucy's 20 April 2025 flyby. Credit: NASA/Goddard/SwRI/Johns Hopkins APL</figcaption>
+</figure>
+
 <div class="pipeline" id="lorri">
   <div class="pipeline-track" aria-hidden="true"><span class="pipeline-pulse"></span></div>
   <div class="pipeline-steps">
